@@ -1,0 +1,97 @@
+@import 'tailwindcss';
+
+:root {
+  --background: #0f0f0f;
+  --foreground: #fafafa;
+  --primary: #ff0000;
+  --primary-dark: #cc0000;
+  --secondary: #404040;
+  --accent: #666666;
+  --success: #22c55e;
+  --text-secondary: #b3b3b3;
+  --border: #333333;
+  --radius: 0.5rem;
+}
+
+html {
+  background-color: #0f0f0f;
+  color: #fafafa;
+}
+
+@layer base {
+  body {
+    @apply font-sans;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.9), inset 0 0 20px rgba(255, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 30px rgba(255, 0, 0, 0), inset 0 0 20px rgba(255, 0, 0, 0.3);
+  }
+}
+
+@keyframes pulse-scale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes flare {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes count-down {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+.sos-pulse {
+  animation: pulse-glow 1.5s infinite, pulse-scale 1.5s infinite, flare 1.5s infinite;
+}
+
+.slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+.fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.count-down-pulse {
+  animation: count-down 0.5s infinite alternate;
+}
